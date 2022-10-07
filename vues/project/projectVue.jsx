@@ -1,9 +1,11 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 import { Column, Modal } from "../../components"
 import { randomRGBA } from "../../utils"
 
 import * as Styled from './styled'
+
+import { getProject } from "../../api/database"
 
 const dummy = {
     columnName: 'Column 1',
@@ -35,7 +37,6 @@ export const ProjectVue = () => {
         setColumnsInput('')
         setModalOpen(!isModalOpen)
     }
-
     return (
         <>
             <Styled.Header>

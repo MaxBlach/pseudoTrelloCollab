@@ -1,16 +1,18 @@
 import { useState } from "react"
-import { Modal } from "../../shared/modal/styled"
+// import { Modal } from "../../shared/modal/styled"
 import { Task } from "./task"
 import * as Styled from './styled'
 
 export const Column = ({ data }) => {
     const { columnName, columnColor, tasks } = data
+
     const [taskList, setTasks] = useState([...tasks])
     const [taskTitleInput, setTaskTitleInput] = useState('')
     const [taskBodyInput, setTaskBodyInput] = useState('')
     const [taskImgs, setTaskImgs] = useState([])
+
     const [isModalOpen, setModalOpen] = useState(false)
-    console.log(taskList)
+
     const addTask = () => {
         const newTask = {
             taskTitle: taskTitleInput,

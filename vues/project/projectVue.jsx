@@ -2,6 +2,9 @@ import { Column } from "../../components"
 import * as Styled from './styled'
 import { useState } from "react"
 import { Modal } from "../../components/shared/modal"
+
+import { getProject } from "../../api/database"
+
 const dummy = {
     columnName: 'Column 1',
     columnColor: '#f7cdcb',
@@ -52,7 +55,7 @@ export const ProjectVue = () => {
                 />
                 <button onClick={addColumn}>Add column</button>
             </Modal>
-            <Styled.addBtn onClick={()=>setModalOpen(!isModalOpen)}>Add</Styled.addBtn>
+            <Styled.addBtn onClick={()=>setModalOpen(getProject())}>Add</Styled.addBtn>
         </Styled.Container >
     )
 }

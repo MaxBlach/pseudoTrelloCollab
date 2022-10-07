@@ -3,6 +3,9 @@ import styled from "styled-components";
 export const Modal = styled.div`
     position: absolute;
 
+    display: flex;
+    flex-direction: column;
+
     top: 50%;
     right: 50%;
 

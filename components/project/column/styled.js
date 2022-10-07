@@ -23,3 +23,5 @@ export const TaskWrapper = styled.div`
     flex-direction: column;
     gap: 1em;
 `
+export const ModalBody = styled.div`
+`

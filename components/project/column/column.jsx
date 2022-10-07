@@ -1,5 +1,5 @@
 import { useState } from "react"
-
+import { Modal } from "../../shared/modal/styled"
 import { Task } from "./task"
 import * as Styled from './styled'
 
@@ -25,7 +25,7 @@ export const Column = ({ data }) => {
 
     return (
         <Styled.Column Background={columnColor}>
-            <Modal isOpen={isModalOpen} HandleClose={() => setModalOpen(!isModalOpen)} ModalTitle="Addtask">
+            {/* <Modal isOpen={isModalOpen} HandleClose={() => setModalOpen(!isModalOpen)} ModalTitle="Addtask">
                 <Styled.ModalBody>
                     <input
                         type="text"
@@ -40,7 +40,7 @@ export const Column = ({ data }) => {
                         onChange={(e) => setTaskBodyInput(e.target.value)}
                     />
                 </Styled.ModalBody>
-            </Modal>
+            </Modal> */}
             {
                 columnName &&
                 <>
@@ -54,7 +54,7 @@ export const Column = ({ data }) => {
                             })
                         }
                     </Styled.TaskWrapper>
-                    {!isModalOpen &&
+                    {/* {!isModalOpen &&
                         <Styled.Btn>
                             <img
                                 onClick={() => setModalOpen(!isModalOpen)}
@@ -62,7 +62,7 @@ export const Column = ({ data }) => {
                                 alt="close"
                             />
                         </Styled.Btn>
-                    }
+                    } */}
                 </>
             }
         </Styled.Column >

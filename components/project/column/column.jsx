@@ -1,5 +1,6 @@
 import { useState } from "react"
-// import { Modal } from "../../shared/modal/styled"
+import { Modal } from "../../shared/modal"
+
 import { Task } from "./task"
 import * as Styled from './styled'
 
@@ -15,19 +16,20 @@ export const Column = ({ data }) => {
 
     const addTask = () => {
         const newTask = {
-            taskTitle: taskTitleInput,
+            taskName: taskTitleInput,
             taskBody: taskBodyInput,
-            taskImgs: 'https://source.unsplash.com/200x200'
+            taskImgs: ['https://source.unsplash.com/200x200']
         }
-        setTasks(newTask)
+        setTasks([...taskList, newTask])
         setTaskTitleInput('')
         setTaskBodyInput('')
-        setTaskImgs([])
     }
+
+    console.log(taskList)
 
     return (
         <Styled.Column Background={columnColor}>
-            {/* <Modal isOpen={isModalOpen} HandleClose={() => setModalOpen(!isModalOpen)} ModalTitle="Addtask">
+            <Modal isOpen={isModalOpen} HandleClose={() => setModalOpen(!isModalOpen)} ModalTitle="Add task">
                 <Styled.ModalBody>
                     <input
                         type="text"
@@ -35,14 +37,14 @@ export const Column = ({ data }) => {
                         value={taskTitleInput}
                         onChange={(e) => setTaskTitleInput(e.target.value)}
                     />
-                    <input
-                        type="text"
+                    <textarea
                         placeholder="What to do..."
                         value={taskBodyInput}
                         onChange={(e) => setTaskBodyInput(e.target.value)}
                     />
+                    <button onClick={addTask}>Add task</button>
                 </Styled.ModalBody>
-            </Modal> */}
+            </Modal>
             {
                 columnName &&
                 <>
@@ -56,15 +58,13 @@ export const Column = ({ data }) => {
                             })
                         }
                     </Styled.TaskWrapper>
-                    {/* {!isModalOpen &&
-                        <Styled.Btn>
-                            <img
-                                onClick={() => setModalOpen(!isModalOpen)}
-                                src={require('../../../assets/close.png')}
-                                alt="close"
-                            />
-                        </Styled.Btn>
-                    } */}
+                    <Styled.Btn>
+                        <img
+                            onClick={() => setModalOpen(!isModalOpen)}
+                            src={require('../../../assets/close.png')}
+                            alt="close"
+                        />
+                    </Styled.Btn>
                 </>
             }
         </Styled.Column >

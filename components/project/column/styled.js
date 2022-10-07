@@ -24,4 +24,53 @@ export const TaskWrapper = styled.div`
     gap: 1em;
 `
 export const ModalBody = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    gap: 1em;
+
+    height: 100%;
+    margin: 0.5em 0 1em 0;
+
+    input{
+        font-size: large;
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 0.3em 0.5em;
+    }
+
+    textarea{
+        font-size: large;
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 0.5em 1.4em 3em 0.5em;
+        width: 90%;
+    }
+
+    button{
+        width: 30%;
+        border-radius: 10px;
+        background-color: #FF8787;
+        color: white;
+        padding: 0.2em;
+    }
+`
+export const Btn = styled.button`
+    align-self: flex-end;
+
+    margin-top: 10px;
+    width: 35px;
+    height: 35px;
+    
+    background-color: #256D85;
+    border-radius: 35px;
+    img{
+        filter: invert();
+        width: 35px;
+        transform: rotate(45deg);
+
+        padding: 0.5em;
+    }
 `

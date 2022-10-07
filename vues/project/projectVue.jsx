@@ -7,7 +7,7 @@ import * as Styled from './styled'
 
 const dummy = {
     columnName: 'Column 1',
-    columnColor: '#f7cdcb',
+    columnColor: 'rgba(255,0,0,0.4)',
     tasks: [
         {
             taskName: 'Task 1',
